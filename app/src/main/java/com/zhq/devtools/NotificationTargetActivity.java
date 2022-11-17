@@ -8,6 +8,6 @@ public class NotificationTargetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification_target);
+        setContentView(R.layout.activity_main_done);
     }
 }
