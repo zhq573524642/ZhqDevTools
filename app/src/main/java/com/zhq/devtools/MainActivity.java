@@ -93,38 +93,41 @@ public class MainActivity extends Activity {
         remoteViews.setOnClickPendingIntent(R.id.btn_stop, stopPendingIntent);
 
         NotificationUtils.getInstance()
-                .initNotificationManager(MainActivity.this)
-                .createNotificationChannel("channel_1", "normal_channel", "普通通知", NotificationManager.IMPORTANCE_LOW, false)
-                .setNotificationId(1)
-                .setContentTitle("普通通知标题")
-                .setContentText("这是普通通知")
-                .setSubText("子标题")
-                .isAutoCancel(true)
-                .isShowWhen(true)
-                .setWhen(System.currentTimeMillis())
-                .setNotificationDeskNumber(99)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_test_img))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setNotificationAction(action)
-                .setPendingIntent(pi)
-                .setDeletePendingIntent(pi)
-                .setFullScreenPendingIntent(pi)
-                .isFullScreenIntentHighPriority(false)
-                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
-                .setLightArgb(Color.GREEN)
-                .setLightOnMs(1000)
-                .setLightOffMs(1000)
-                .setSound(Uri.fromFile(new File("....")))
-                .setVibrate(new long[]{0, 1000, 1000, 1000})
-                .setProgressMax(100)
-                .setProgressCurrent(50)
-                .createNormalNotification()
-                .createBigTextNotification("长文本。。。")
-                .createBigPictureNotification(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
-                .createProgressNotification()
-                .updateProgressNotification()
-                .createCustomNotification(remoteViews);
+                .initNotificationManager(MainActivity.this)//创建NotificationManager、
+                .createNotificationChannel("channel_1",
+                        "normal_channel",
+                        "普通通知",
+                        NotificationManager.IMPORTANCE_LOW, false)//创建NotificationChannel
+                .setNotificationId(1)//通知Id
+                .setContentTitle("普通通知标题")//标题
+                .setContentText("这是普通通知")//内容
+                .setSubText("子标题")//子标题
+                .isAutoCancel(true)//点击后是否自动取消
+                .isShowWhen(true)//是否显示通知时间
+                .setWhen(System.currentTimeMillis())//通知时间
+                .setNotificationDeskNumber(99)//桌面通知数量
+                .setSmallIcon(R.mipmap.ic_launcher)//小图标
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_test_img))//大图标
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)//优先级
+                .setNotificationAction(action)//操作通知的action
+                .setPendingIntent(pi)//点击意图
+                .setDeletePendingIntent(pi)//通知删除时的意图
+                .setFullScreenPendingIntent(pi)//全屏点击的意图
+                .isFullScreenIntentHighPriority(false)//全屏点击的意图是否高优先级
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)//NotificationCompat.CATEGORY_MESSAGE  通知类别，"勿扰模式"时系统会决定要不要显示你的通知
+                .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)//NotificationCompat.VISIBILITY_PRIVATE 屏幕可见性，锁屏时，显示icon和标题，内容隐藏
+                .setLightArgb(Color.GREEN)//呼吸灯颜色
+                .setLightOnMs(1000)//呼吸灯时间on
+                .setLightOffMs(1000)//呼吸灯时间off
+                .setSound(Uri.fromFile(new File("....")))//提示音
+                .setVibrate(new long[]{0, 1000, 1000, 1000})//震动 AndroidManifest.xml需要添加权限   <uses-permission android:name="android.permission.VIBRATE"/>
+                .setProgressMax(100)//进度通知 最大进度
+                .setProgressCurrent(50)//进度通知 当前进度
+                .createNormalNotification()//1.创建普通通知
+                .createBigTextNotification("长文本。。。")//2.创建长文本通知
+                .createBigPictureNotification(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))//3.创建大图通知
+                .createProgressNotification()//4.创建进度通知
+                .updateProgressNotification()//5.更新进度通知
+                .createCustomNotification(remoteViews);//6.创建自定义通知
     }
 }
