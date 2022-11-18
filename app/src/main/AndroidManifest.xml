@@ -11,9 +11,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".NotificationTargetActivity"
+            android:name=".NotificationActivity"
             android:exported="false"
-            android:theme="@style/AppTheme"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TestCameraXActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

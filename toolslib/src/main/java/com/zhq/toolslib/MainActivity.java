@@ -1,9 +1,9 @@
 package com.zhq.toolslib;
 
 import android.app.NotificationManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.viewbinding.ViewBinding;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.zhq.toolslib.databinding.ActivityMainBinding;
 
