@@ -3,13 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zhq.devtools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="MediaStore.Images.Media.INTERNAL_CONTENT_URI" />
+    <uses-permission android:name="MediaStore.Images.Media.EXTERNAL_CONTENT_URI" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenshotFileObserverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenshotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MediaTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NFCShareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FileSelectActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AndroidBasicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AndroidViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestDatabaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NotificationActivity"
             android:exported="false"
@@ -23,8 +81,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestCameraXActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".TestCameraXActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".database.SQLiteOpenHelperActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".database.LitepalActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.zhq.devtools.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider> <!-- 控制音频receiver -->
+        <receiver
+            android:name=".RemoteControlReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

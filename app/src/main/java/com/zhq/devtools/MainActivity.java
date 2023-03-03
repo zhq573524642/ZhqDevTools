@@ -23,6 +23,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.SparseArray;
 import android.widget.RemoteViews;
 
 import com.zhq.devtools.databinding.ActivityMainBinding;
@@ -34,19 +36,27 @@ import java.io.File;
 public class MainActivity extends Activity {
 
     private com.zhq.devtools.databinding.ActivityMainBinding binding;
-    private int progress = 0;
-    private String bigText = "A notification is a message that Android displays outside your app's UI to provide the user with reminders, communication from other people, or other timely information from your app. Users can tap the notification to open your app or take an action directly from the notification.";
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.btnAndroidView.setOnClickListener(v -> {
+            startActivity(new Intent(this, AndroidBasicActivity.class));
+        });
+        binding.btnMedia.setOnClickListener(v -> {
+            startActivity(new Intent(this, MediaTestActivity.class));
+        });
         binding.btnNotification.setOnClickListener(v -> {
             startActivity(new Intent(this, NotificationActivity.class));
         });
         binding.btnCameraX.setOnClickListener(v -> {
             startActivity(new Intent(this, TestCameraXActivity.class));
+        });
+        binding.btnDatabase.setOnClickListener(v -> {
+            startActivity(new Intent(this, TestDatabaseActivity.class));
         });
 
     }

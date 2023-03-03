@@ -534,4 +534,10 @@ public class NotificationUtils {
         notificationManager.notify(notificationId, builder.build());
         return this;
     }
+
+    public void cancelNotificationById(){
+        if (notificationManager!=null){
+            notificationManager.cancel(notificationId);
+        }
+    }
 }

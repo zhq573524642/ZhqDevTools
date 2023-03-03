@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MediaTestActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_simple_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp">
+
+        <RadioButton
+            android:text="直接获取缩略图"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:text="保存到文件并通知相册"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_simple_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简单的拍照" />
+        <Button
+            android:layout_marginStart="10dp"
+            android:id="@+id/btn_show_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="显示保存的照片" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_simple_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单的录像" />
+    <Button
+        android:id="@+id/btn_print_image"
+        android:text="打印图片"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_print_html"
+        android:text="打印Html"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_screentshot_fileobserver"
+        android:text="监听手机截屏FileObserver"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_screentshot"
+        android:text="监听手机截屏ContentObserver"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
+    <VideoView
+        android:id="@+id/video_view"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+</LinearLayout>

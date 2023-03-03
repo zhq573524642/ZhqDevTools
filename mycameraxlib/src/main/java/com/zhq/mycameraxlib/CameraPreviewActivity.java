@@ -8,9 +8,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.camera.core.AspectRatio;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
+import androidx.camera.video.QualitySelector;
 import androidx.camera.view.PreviewView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 
@@ -43,6 +46,23 @@ public class CameraPreviewActivity extends FragmentActivity {
         binding.btnTakePicture.setOnClickListener(v -> {
             takePicture();
         });
+        binding.cameraSwitch.setOnClickListener(v -> {
+            CameraXUtils.getInstance().switchCamera();
+        });
+        binding.cameraFlash.setOnClickListener(v -> {
+            int i = CameraXUtils.getInstance().switchFlashMode();
+            switch (i) {
+                case ImageCapture.FLASH_MODE_AUTO:
+                    binding.cameraFlash.setImageResource(R.drawable.im_ic_flash_auto);
+                    break;
+                case ImageCapture.FLASH_MODE_ON:
+                    binding.cameraFlash.setImageResource(R.drawable.im_ic_flash_on);
+                    break;
+                case ImageCapture.FLASH_MODE_OFF:
+                    binding.cameraFlash.setImageResource(R.drawable.im_ic_flash_off);
+                    break;
+            }
+        });
     }
 
     private void takePicture() {
@@ -55,6 +75,11 @@ public class CameraPreviewActivity extends FragmentActivity {
         CameraXUtils.getInstance()
                 .setContext(CameraPreviewActivity.this)
                 .setLifecycleOwner((LifecycleOwner) this)
+                .setFlashModeDefault(ImageCapture.FLASH_MODE_AUTO)
+                .setJpegQuality(100)
+                .setRecordQualitySelector(QualitySelector.QUALITY_FHD)
+                .setTargetAspectRatio(AspectRatio.RATIO_16_9)
+                .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
                 .setPreviewView(binding.previewView)
                 .setPreviewType(CameraXUtils.PREVIEW_TYPE_IMAGE)
                 .setCameraSelectorDefault(true)
@@ -62,7 +87,7 @@ public class CameraPreviewActivity extends FragmentActivity {
                 .setCameraXUtilsCallback(new CameraXUtils.OnCameraXUtilsListener() {
                     @Override
                     public void onPictureSavedSuccess(ImageCapture.OutputFileResults outputFileResults, Uri saveUri, String picturePath) {
-                      ToastUtils.getInstance().showShortToast(CameraPreviewActivity.this,"拍照成功");
+                        ToastUtils.getInstance().showShortToast(CameraPreviewActivity.this, "拍照成功");
                     }
 
                     @Override

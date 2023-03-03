@@ -6,24 +6,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:text="Android基础"
+                android:textAllCaps="false"
+                android:id="@+id/btn_android_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:text="四大组件"
+                android:id="@+id/btn_four_element"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/btn_notification"
-                android:text="通知"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="通知" />
+            <Button
+                android:id="@+id/btn_media"
+                android:text="多媒体"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <Button
                 android:id="@+id/btn_cameraX"
-                android:text="CameraX"
-                android:textAllCaps="false"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="CameraX"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_database"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据库"
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
