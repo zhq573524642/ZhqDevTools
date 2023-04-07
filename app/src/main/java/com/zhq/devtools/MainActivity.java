@@ -15,50 +15,62 @@
 package com.zhq.devtools;
 
 import android.app.Activity;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.SparseArray;
-import android.widget.RemoteViews;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.zhq.devtools.adapter.MainMenuListAdapter;
 import com.zhq.devtools.databinding.ActivityMainBinding;
-import com.zhq.toolslib.NotificationUtils;
+import com.zhq.devtools.ui.basic.AndroidBasicActivity;
+import com.zhq.devtools.ui.jetpack.JetpackActivity;
+import com.zhq.devtools.ui.media.AndroidMediaActivity;
 
-import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
 
-    private com.zhq.devtools.databinding.ActivityMainBinding binding;
     private static final String TAG = "MainActivity";
+    private List<String> itemList = new ArrayList<>();
+    private com.zhq.devtools.databinding.ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        binding.btnAndroidView.setOnClickListener(v -> {
-            startActivity(new Intent(this, AndroidBasicActivity.class));
+        binding = (ActivityMainBinding) DataBindingUtil.setContentView(this, R.layout.activity_main);
+        String[] itemName = getResources().getStringArray(R.array.array_main_menu);
+        itemList.addAll(Arrays.asList(itemName));
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        MainMenuListAdapter mainMenuListAdapter = new MainMenuListAdapter(itemList);
+        binding.recyclerView.setAdapter(mainMenuListAdapter);
+        mainMenuListAdapter.setOnRecyclerViewItemClickListener(new MainMenuListAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                switch (position){
+                    case 0://Android基础
+                        startActivity(new Intent(MainActivity.this, AndroidBasicActivity.class));
+                        break;
+                    case 1://四大组件
+                        break;
+                    case 2://数据库
+                        startActivity(new Intent(MainActivity.this, TestDatabaseActivity.class));
+                        break;
+                    case 3://多媒体
+                        startActivity(new Intent(MainActivity.this, AndroidMediaActivity.class));
+                        break;
+                    case 4://View相关
+                        startActivity(new Intent(MainActivity.this,AndroidViewActivity.class));
+                        break;
+                    case 5://Jetpack
+                        startActivity(new Intent(MainActivity.this, JetpackActivity.class));
+                        break;
+                }
+            }
         });
-        binding.btnMedia.setOnClickListener(v -> {
-            startActivity(new Intent(this, MediaTestActivity.class));
-        });
-        binding.btnNotification.setOnClickListener(v -> {
-            startActivity(new Intent(this, NotificationActivity.class));
-        });
-        binding.btnCameraX.setOnClickListener(v -> {
-            startActivity(new Intent(this, TestCameraXActivity.class));
-        });
-        binding.btnDatabase.setOnClickListener(v -> {
-            startActivity(new Intent(this, TestDatabaseActivity.class));
-        });
-
     }
 
 

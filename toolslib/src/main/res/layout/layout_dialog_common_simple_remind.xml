@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fl_window_parent"
+    android:clipChildren="false">
+
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        android:background="@drawable/bg_white_r8"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:textColor="#262626"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:text="hahahahaha" />
+
+            <TextView
+                android:id="@+id/tv_dialog_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="15dp"
+                android:lineSpacingExtra="2dp"
+                tools:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+                android:gravity="center_horizontal"
+                android:textColor="#595959"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_marginTop="20dp"
+                android:id="@+id/line_horizontal"
+                android:background="#f5f6f8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/fl_left_handle"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_left_handle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="取消"
+                        android:textColor="#595959"
+                        android:textSize="15sp" />
+                </FrameLayout>
+                <View
+                    android:id="@+id/line_vertical"
+                    android:background="#f5f6f8"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"/>
+                <FrameLayout
+                    android:id="@+id/fl_right_handle"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_right_handle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="确定"
+                        android:textColor="#262626"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

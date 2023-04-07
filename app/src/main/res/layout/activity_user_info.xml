@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+   <variable
+       name="user"
+       type="com.zhq.devtools.ui.jetpack.mvvm.model.User" />
+  </data>
+  <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+      android:id="@+id/swipe_refresh_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        tools:context=".ui.jetpack.mvvm.UserInfoActivity">
+
+      <LinearLayout
+          android:layout_marginTop="100dp"
+          android:layout_marginStart="30dp"
+          android:layout_marginEnd="30dp"
+          android:orientation="vertical"
+          android:clipChildren="false"
+          android:background="#ffffff"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_marginTop="-40dp"
+            app:image="@{user.avatar_url}"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:textColor="#262626"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{user.name}"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:text="@{user.bio}"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:text="@{user.company}"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:text="@{user.location}"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:text="@{String.valueOf(user.followers)}"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:text="@{String.valueOf(user.following)}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:text="@{user.blog}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#595959"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:text="@{user.html_url}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+      </LinearLayout>
+    </LinearLayout>
+  </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

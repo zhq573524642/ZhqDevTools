@@ -21,6 +21,7 @@ import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
@@ -58,9 +59,7 @@ public class GlideUtils {
     public static final int DiskCacheStrategy_DATA = 4;
     public static final int DiskCacheStrategy_RESURCE = 5;
 
-    //options.centerCrop();
-    //        options.centerInside();
-    //        options.fitCenter();
+
     public static final int SHOW_CENTER_CROP = 10;
     public static final int SHOW_CENTER_INSIDE = 11;
     public static final int SHOW_FIT_CENTER = 12;
@@ -165,9 +164,10 @@ public class GlideUtils {
     }
 
     /************************图片缩放类型*******************************/
-    private int cropType=SHOW_FIT_CENTER;
-    public GlideUtils setCropType(int cropType){
-        this.cropType=cropType;
+    private int cropType = SHOW_FIT_CENTER;
+
+    public GlideUtils setCropType(int cropType) {
+        this.cropType = cropType;
         return this;
     }
 
@@ -209,7 +209,7 @@ public class GlideUtils {
         if (errorDrawable != null) {
             options.error(errorDrawable);
         }
-        switch (cropType){
+        switch (cropType) {
             case SHOW_CENTER_CROP:
                 options.centerCrop();
                 break;
@@ -232,19 +232,52 @@ public class GlideUtils {
      *
      * @param imageView
      */
-    public GlideUtils loadImageUrl(ImageView imageView) {
+    public GlideUtils loadImage(ImageView imageView) {
         if (options != null) {
-            Glide.with(context)
-                    .load(imageUrl)
-                    .apply(options)
-                    .into(imageView);
+            if (!TextUtils.isEmpty(imageUrl)) {
+                Glide.with(context)
+                        .load(imageUrl)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageResId != 0) {
+                Glide.with(context)
+                        .load(imageResId)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageBitmap != null) {
+                Glide.with(context)
+                        .load(imageBitmap)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageFile != null) {
+                Glide.with(context)
+                        .load(imageFile)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageUri != null) {
+                Glide.with(context)
+                        .load(imageUri)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageDrawable != null) {
+                Glide.with(context)
+                        .load(imageDrawable)
+                        .apply(options)
+                        .into(imageView);
+            } else if (imageByte != null && imageByte.length > 0) {
+                Glide.with(context)
+                        .load(imageByte)
+                        .apply(options)
+                        .into(imageView);
+            }
+
         } else {
             throw new NullPointerException("RequestOptions cannot null");
         }
         return this;
     }
 
-    public static Bitmap getBitmapByUrl(Context context, String imageUrl) {
+    public Bitmap getBitmapByUrl(Context context, String imageUrl) {
         Bitmap bitmap = null;
 
         try {
@@ -263,8 +296,9 @@ public class GlideUtils {
         return bitmap;
     }
 
-    public static void loadBlurBitmap(Context context, int resId, ImageView imageView) {
+    public GlideUtils loadBlurBitmap(int resId, ImageView imageView) {
         RequestOptions options = new RequestOptions()
+                .fitCenter()
                 .bitmapTransform(new BlurTransformation(10, 35));
         Glide.with(context)
                 .load(resId)
@@ -278,6 +312,7 @@ public class GlideUtils {
                         imageView.setImageDrawable(drawable);
                     }
                 });
+        return this;
     }
 
 
@@ -287,12 +322,13 @@ public class GlideUtils {
      * @param imageRes
      * @param imageView
      */
-    public static void loadCornerImageRes(Context context, int imageRes, ImageView imageView) {
+    public GlideUtils loadCornerImageRes(int imageRes, ImageView imageView, int roundingRadius) {
         Glide.with(context)
                 .load(imageRes)
-                .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(18)))//相当于两种变换的交集（圆角时前面的变换可以根据情况设定）
+                .transform(new MultiTransformation<Bitmap>(new FitCenter(), new RoundedCorners(roundingRadius != 0 ? roundingRadius : 18)))//相当于两种变换的交集（圆角时前面的变换可以根据情况设定）
 //                        .dontTransform()//不使用任何变换
                 .into(imageView);
+        return this;
     }
 
     public static void loadImageUrlWithListener(Context context, String imageUrl, ImageView imageView, RequestListener<Drawable> requestListener) {

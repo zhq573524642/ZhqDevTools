@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="array_main_menu">
-
+        <item>Android基础</item>
+        <item>Android四大组件</item>
+        <item>数据库</item>
+        <item>多媒体</item>
+        <item>View相关</item>
+        <item>Jetpack</item>
     </array>
 </resources>

@@ -68,7 +68,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void handleNotificationConfigAndCreate() {
         Observable<Bitmap> observable = Observable.create(emitter -> {
-            Bitmap bitmap = GlideUtils.getBitmapByUrl(NotificationActivity.this, "http://121.43.188.190:8080/secure/attachment/45631/45631_image-2023-02-01-15-14-23-918.png");
+            Bitmap bitmap = GlideUtils.getInstance().getBitmapByUrl(NotificationActivity.this, "http://121.43.188.190:8080/secure/attachment/45631/45631_image-2023-02-01-15-14-23-918.png");
             emitter.onNext(bitmap);
             //发送完成
             emitter.onComplete();

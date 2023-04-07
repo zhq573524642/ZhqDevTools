@@ -107,7 +107,7 @@ public class DensityUtil {
     public  int getViewHeight(Context context, int marginSize, int ratioWidth, int ratioHeight){
         Resources res = context.getResources();
         int screenWidth = res.getDisplayMetrics().widthPixels;
-        final float scale = context.getResources().getDisplayMetrics().density;
+        final float scale =res.getDisplayMetrics().density;
         int margin = (int) (marginSize * scale + 0.5f);
         int imageWidth = screenWidth - margin;
         int imageHeight = (imageWidth * ratioHeight) / ratioWidth;

@@ -29,6 +29,8 @@ public class TestDatabaseActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.btn_litePal:
                 break;
+            case R.id.btn_poem:
+                break;
         }
     }
 }

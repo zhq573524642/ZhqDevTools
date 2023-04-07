@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.zhq.devtools.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="user_name"
+            android:defaultValue="no_user_name"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.zhq.devtools.ui.jetpack.navigation.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/pendingIntentFragment"
+        android:name="com.zhq.devtools.PendingIntentFragment"
+        android:label="fragment_pending_intent"
+        tools:layout="@layout/fragment_pending_intent">
+        <deepLink app:uri="zhq://www.baidu.com/{username}/{age}?sex={sex}&amp;className={className}" />
+        <argument
+            android:name="username"
+            android:defaultValue="unknown"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="sex"
+            android:defaultValue="unknown"
+            app:argType="string" />
+        <argument
+            android:name="className"
+            android:defaultValue="unknown"
+            app:argType="string" />
+    </fragment>
+    
+</navigation>

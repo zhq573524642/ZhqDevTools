@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <data>
+
+   </data>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       tools:context=".widget.CommonDialogActivity">
+
+      <Button
+          android:id="@+id/btn_bottom_handle_dialog"
+          android:text="底部选择操作Dialog"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+      <Button
+          android:id="@+id/btn_bottom_input_dialog"
+          android:text="底部输入Dialog"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+      <Button
+          android:id="@+id/btn_center_simple_remind_dialog"
+          android:text="中间通用提醒Dialog"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+   </LinearLayout>
+</layout>

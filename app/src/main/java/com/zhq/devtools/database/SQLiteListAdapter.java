@@ -49,7 +49,7 @@ public class SQLiteListAdapter extends RecyclerView.Adapter<SQLiteListAdapter.My
                 .setPlaceholder(R.mipmap.ic_launcher_round)
                 .setCropType(GlideUtils.SHOW_CIRCLE_CROP)
                 .configRequestOptions()
-                .loadImageUrl(holder.ivAvatar);
+                .loadImage(holder.ivAvatar);
         holder.tvName.setText(bean.name + "  " + bean.age + "岁");
         holder.tvDesc.setText(bean.desc);
     }

@@ -21,4 +21,24 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AppThemeHaveActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    </style>
+
+    <style name="DialogSimple2" parent="AppTheme">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">#00000000</item>
+    </style>
+
+    <style name="tv_tag_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/color_262626</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
 </resources>

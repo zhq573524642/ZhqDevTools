@@ -151,7 +151,7 @@ public class NotificationUtils {
     }
 
     public NotificationUtils setFullScreenPendingIntent(PendingIntent screenPendingIntent) {
-        this.fullScreenPendingIntent = fullScreenPendingIntent;
+        this.fullScreenPendingIntent = screenPendingIntent;
         return this;
     }
 

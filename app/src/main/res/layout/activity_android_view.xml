@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".AndroidViewActivity">
-   <TextView
-       android:id="@+id/text_view"
-       android:shadowColor="@color/purple_500"
-       android:shadowRadius="3.0"
-       android:lineSpacingMultiplier="2"
-       android:layout_width="wrap_content"
+   <Button
+       android:id="@+id/btn_dialog"
+       android:text="常用Dialog"
+       android:textAllCaps="false"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
+   <com.moxun.tagcloudlib.view.TagCloudView
+       android:id="@+id/tag_cloud_view"
+       app:autoScrollMode="uniform"
+       app:radiusPercent="0.8"
+       app:scrollSpeed="0.5"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 </LinearLayout>

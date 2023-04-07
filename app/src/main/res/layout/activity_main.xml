@@ -1,55 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+  <data>
+
+  </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:text="Android基础"
-                android:textAllCaps="false"
-                android:id="@+id/btn_android_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="四大组件"
-                android:id="@+id/btn_four_element"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:id="@+id/btn_notification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="通知" />
-            <Button
-                android:id="@+id/btn_media"
-                android:text="多媒体"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/btn_cameraX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CameraX"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btn_database"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="数据库"
-                android:textAllCaps="false" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        android:layout_height="wrap_content" />
+  </LinearLayout>
+</layout>

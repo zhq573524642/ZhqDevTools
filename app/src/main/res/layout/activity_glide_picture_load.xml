@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.media.GlidePictureLoadActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/image_view"
+                android:layout_margin="15dp"
+                android:layout_width="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="200dp"/>
+            <TextView
+                style="@style/tv_tag_title_style"
+                android:text="常用加载图片类型" />
+
+            <RadioGroup
+                android:id="@+id/rg_image_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_image1"
+                    style="@style/tv_tag_title_style"
+                    android:text="图片url" />
+
+                <RadioButton
+                    android:id="@+id/rb_image2"
+                    style="@style/tv_tag_title_style"
+                    android:text="图片Bitmap" />
+
+                <RadioButton
+                    android:id="@+id/rb_image3"
+                    style="@style/tv_tag_title_style"
+                    android:text="图片Resource" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/tv_tag_title_style"
+                android:text="选择图片缓存类型" />
+
+            <RadioGroup
+                android:id="@+id/rg_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_cache1"
+                    style="@style/tv_tag_title_style"
+                    android:text="DiskCacheStrategy_ALL" />
+
+                <RadioButton
+                    android:id="@+id/rb_cache2"
+                    style="@style/tv_tag_title_style"
+                    android:text="DiskCacheStrategy_NONE" />
+
+                <RadioButton
+                    android:id="@+id/rb_cache3"
+                    style="@style/tv_tag_title_style"
+                    android:text="DiskCacheStrategy_AUTOMATIC" />
+
+                <RadioButton
+                    android:id="@+id/rb_cache4"
+                    style="@style/tv_tag_title_style"
+                    android:text="DiskCacheStrategy_DATA" />
+
+                <RadioButton
+                    android:id="@+id/rb_cache5"
+                    style="@style/tv_tag_title_style"
+                    android:text="DiskCacheStrategy_RESURCE" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/tv_tag_title_style"
+                android:text="图片裁剪类型" />
+
+            <RadioGroup
+                android:id="@+id/rg_crop_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_crop_type1"
+                    style="@style/tv_tag_title_style"
+                    android:text="CENTER_CROP" />
+
+                <RadioButton
+                    android:id="@+id/rb_crop_type2"
+                    style="@style/tv_tag_title_style"
+                    android:text="CENTER_INSIDE" />
+
+                <RadioButton
+                    android:id="@+id/rb_crop_type3"
+                    style="@style/tv_tag_title_style"
+                    android:text="FIT_CENTER" />
+
+                <RadioButton
+                    android:id="@+id/rb_crop_type4"
+                    style="@style/tv_tag_title_style"
+                    android:text="CIRCLE_CROP" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_load_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载图片" />
+           <SeekBar
+               android:id="@+id/sb_corner"
+               android:max="100"
+               android:layout_marginStart="12dp"
+               android:layout_marginEnd="12dp"
+               android:layout_width="match_parent"
+               android:layout_height="15dp"/>
+            <Button
+                android:id="@+id/btn_load_corner_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载圆角图片" />
+            <Button
+                android:id="@+id/btn_load_blur_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载高斯模糊图片" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

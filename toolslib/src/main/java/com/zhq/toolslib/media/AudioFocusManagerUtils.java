@@ -66,7 +66,7 @@ public class AudioFocusManagerUtils {
         }
     }
 
-    public AudioManager setAudioManager() {
+    public AudioManager getAudioManager() {
         return audioManager;
     }
 

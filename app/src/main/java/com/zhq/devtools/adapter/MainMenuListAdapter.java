@@ -21,9 +21,9 @@ import java.util.List;
  * Description
  */
 public class MainMenuListAdapter extends RecyclerView.Adapter<MainMenuListAdapter.MyViewHolder> {
-    private List<MainMenuItem> data;
+    private List<String> data;
 
-    public MainMenuListAdapter(List<MainMenuItem> list) {
+    public MainMenuListAdapter(List<String> list) {
         data = list;
     }
 
@@ -32,12 +32,20 @@ public class MainMenuListAdapter extends RecyclerView.Adapter<MainMenuListAdapte
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_menu_list, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onRecyclerViewItemClickListener!=null){
+                    onRecyclerViewItemClickListener.onItemClick(holder.getAdapterPosition());
+                }
+            }
+        });
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tvItemName.setText(data.get(position).name);
+        holder.tvItemName.setText(data.get(position));
     }
 
     @Override
@@ -55,5 +63,15 @@ public class MainMenuListAdapter extends RecyclerView.Adapter<MainMenuListAdapte
             cvItem = itemView.findViewById(R.id.cv_item);
             tvItemName = itemView.findViewById(R.id.tv_item_name);
         }
+    }
+
+    public interface OnRecyclerViewItemClickListener{
+        void onItemClick(int position);
+    }
+
+    private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
+
+    public void setOnRecyclerViewItemClickListener(OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
+        this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
     }
 }

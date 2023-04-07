@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handleClickEvent"
+            type="com.zhq.devtools.ui.jetpack.JetpackActivity.HandleClickEventListener" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="imageViewPadding"
+            type="int" />
+
+        <variable
+            name="bindingViewModel"
+            type="com.zhq.devtools.ui.jetpack.databinding.TwoWayBindingViewModel" />
+
+        <variable
+            name="bindingViewModel2"
+            type="com.zhq.devtools.ui.jetpack.databinding.TwoWayBindingViewModel2" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.jetpack.JetpackActivity">
+
+        <Button
+            android:id="@+id/btn_mvvm"
+            android:text="MVVM架构演示"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{handleClickEvent::setClickEvent}"
+            android:text="Navigation"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            app:image="@{imageUrl}"
+            app:padding="@{imageViewPadding}" />
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="@={bindingViewModel2.username}" />
+
+        <TextView
+            android:id="@+id/tv_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@{bindingViewModel2.username}"
+            android:textSize="15sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

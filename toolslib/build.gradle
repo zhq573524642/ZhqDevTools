@@ -34,6 +34,7 @@ dependencies {
 
     implementation 'androidx.core:core:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
@@ -50,5 +51,9 @@ dependencies {
     api 'com.github.Justson.AgentWeb:agentweb-core:v5.0.6-androidx' // (必选)
     api 'com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.6-androidx' // (可选)
     api 'com.github.Justson:Downloader:v5.0.4-androidx'
+    //3D旋转View
+    api 'com.moxun:tagcloudlib:1.2.0'
+    //圆形头像
+    api 'de.hdodenhof:circleimageview:2.2.0'
 
 }
