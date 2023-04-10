@@ -26,6 +26,7 @@ import com.zhq.devtools.databinding.ActivityMainBinding;
 import com.zhq.devtools.ui.basic.AndroidBasicActivity;
 import com.zhq.devtools.ui.jetpack.JetpackActivity;
 import com.zhq.devtools.ui.media.AndroidMediaActivity;
+import com.zhuiq.fileslib.PathsUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;

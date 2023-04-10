@@ -111,6 +111,7 @@ package="com.zhq.devtools">
     </activity>
     <activity android:name=".ui.jetpack.paging.PagingOneActivity" />
     <activity android:name=".ui.jetpack.mvvm.UserInfoActivity" />
+    <activity android:name=".ui.basic.DataPersistenceActivity" />
 
 
     <provider

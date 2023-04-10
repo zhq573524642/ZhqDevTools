@@ -57,6 +57,8 @@ dependencies {
     implementation project(path: ':mycameraxlib')
     implementation project(path: ':databaselib')
     implementation project(path: ':devToolsLib')
+    implementation project(path: ':filesLib')
+    implementation project(path: ':OkhttpLib')
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
