@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData;
 import com.zhq.devtools.ui.jetpack.mvvm.api.ApiService;
 import com.zhq.devtools.ui.jetpack.mvvm.db.UserDao;
 import com.zhq.devtools.ui.jetpack.mvvm.model.User;
-import com.zhq.toolslib.ThreadUtil;
 
 import retrofit2.Call;
 import retrofit2.Callback;

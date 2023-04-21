@@ -19,10 +19,13 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AppThemeHaveActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
     <style name="DialogSimple2" parent="AppTheme">
@@ -41,4 +44,14 @@
     </style>
 
 
+    <style name="checkBoxStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_rating_bar" parent="@style/Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/bg_rating_bar</item>
+    </style>
 </resources>

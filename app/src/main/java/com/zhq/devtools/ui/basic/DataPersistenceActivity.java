@@ -6,11 +6,10 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 
 import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityDataPersistenceBinding;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +18,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 public class DataPersistenceActivity extends AppCompatActivity {

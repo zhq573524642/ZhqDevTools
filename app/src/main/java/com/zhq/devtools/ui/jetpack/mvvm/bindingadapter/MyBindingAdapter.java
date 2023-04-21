@@ -1,14 +1,12 @@
 package com.zhq.devtools.ui.jetpack.mvvm.bindingadapter;
 
-import android.content.Context;
 import android.text.TextUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
 import com.zhq.devtools.R;
-import com.zhq.toolslib.GlideUtils;
+import com.zhq.toolslib.glide.GlideUtils;
 
 /**
  * @Author ZhangHuiQiang

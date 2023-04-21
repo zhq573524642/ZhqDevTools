@@ -6,14 +6,12 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityGlidePictureLoadBinding;
-import com.zhq.toolslib.GlideUtils;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.glide.GlideUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 public class GlidePictureLoadActivity extends AppCompatActivity {
 

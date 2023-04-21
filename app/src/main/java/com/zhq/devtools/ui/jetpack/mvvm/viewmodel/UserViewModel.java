@@ -1,7 +1,6 @@
 package com.zhq.devtools.ui.jetpack.mvvm.viewmodel;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -18,7 +17,6 @@ import com.zhq.devtools.ui.jetpack.mvvm.model.User;
 import com.zhq.devtools.ui.jetpack.mvvm.repository.MenuRepository;
 import com.zhq.devtools.ui.jetpack.mvvm.repository.TangPoemRepository;
 import com.zhq.devtools.ui.jetpack.mvvm.repository.UserRepository;
-import com.zhq.toolslib.ThreadUtil;
 
 import java.util.List;
 

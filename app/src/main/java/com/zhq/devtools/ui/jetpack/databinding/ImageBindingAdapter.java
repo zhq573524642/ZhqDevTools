@@ -1,6 +1,5 @@
 package com.zhq.devtools.ui.jetpack.databinding;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.widget.ImageView;
@@ -8,7 +7,7 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 
 import com.zhq.devtools.R;
-import com.zhq.toolslib.GlideUtils;
+import com.zhq.toolslib.glide.GlideUtils;
 
 /**
  * @Author ZhangHuiQiang

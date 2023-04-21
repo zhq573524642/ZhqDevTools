@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhq.devtools.App;
 import com.zhq.devtools.R;
-import com.zhq.toolslib.GlideUtils;
+import com.zhq.toolslib.glide.GlideUtils;
 
 import java.util.List;
 

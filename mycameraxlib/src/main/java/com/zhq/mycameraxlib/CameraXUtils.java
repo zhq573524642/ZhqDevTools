@@ -5,7 +5,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 import android.util.Size;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.camera.core.AspectRatio;
@@ -29,16 +28,14 @@ import androidx.camera.video.VideoRecordEvent;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Consumer;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.google.common.util.concurrent.ListenableFuture;
-import com.zhq.toolslib.ThreadUtil;
+import com.zhq.toolslib.thread.ThreadUtil;
 
 import java.io.File;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 public class CameraXUtils {
     private static final String TAG = "CameraXUtils";

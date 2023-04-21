@@ -4,8 +4,6 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +12,7 @@ import android.os.HandlerThread;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import com.zhq.toolslib.ThreadUtil;
+import com.zhq.toolslib.thread.ThreadUtil;
 
 /**
  * @Author ZhangHuiQiang

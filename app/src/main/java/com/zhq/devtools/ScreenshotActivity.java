@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.zhq.devtools.databinding.ActivityScreenshotBinding;
-import com.zhq.toolslib.ThreadUtil;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.thread.ThreadUtil;
+import com.zhq.toolslib.toast.ToastUtils;
 import com.zhq.toolslib.screen.ScreenshotListenManager;
 
 public class ScreenshotActivity extends AppCompatActivity implements ScreenshotListenManager.OnScreenshotListenCallback {

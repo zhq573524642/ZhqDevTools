@@ -5,18 +5,51 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".AndroidViewActivity">
+    tools:context=".widget.AndroidViewActivity">
+   <Button
+       android:id="@+id/btnSwitcher"
+       android:text="Android中现成的控件"
+       android:textAllCaps="false"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+   <Button
+       android:id="@+id/btnProgress"
+       android:text="进度条"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+   <Button
+       android:id="@+id/btn_view_pager"
+       android:textAllCaps="false"
+       android:text="ViewPager"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+   <Button
+       android:id="@+id/btn_view_pager2"
+       android:textAllCaps="false"
+       android:text="ViewPager2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
    <Button
        android:id="@+id/btn_dialog"
        android:text="常用Dialog"
        android:textAllCaps="false"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
-   <com.moxun.tagcloudlib.view.TagCloudView
-       android:id="@+id/tag_cloud_view"
-       app:autoScrollMode="uniform"
-       app:radiusPercent="0.8"
-       app:scrollSpeed="0.5"
+   <Button
+       android:id="@+id/btnNineGridView"
+       android:text="仿微信朋友圈图片九宫格"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="wrap_content"/>
+   <Button
+       android:id="@+id/btnTags3D"
+       android:text="仿Soul 3D星球"
+       android:textAllCaps="false"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+   <Button
+       android:id="@+id/btnTouchTest"
+       android:text="触摸事件Test"
+       android:textAllCaps="false"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
 </LinearLayout>

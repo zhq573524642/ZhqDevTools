@@ -10,9 +10,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 
-import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityAndroidVideoBinding;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 public class AndroidVideoActivity extends AppCompatActivity {
 

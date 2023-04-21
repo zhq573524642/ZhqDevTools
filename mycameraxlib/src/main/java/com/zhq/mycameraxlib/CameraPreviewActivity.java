@@ -1,32 +1,22 @@
 package com.zhq.mycameraxlib;
 
-import android.Manifest;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.camera.core.AspectRatio;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
 import androidx.camera.video.QualitySelector;
 import androidx.camera.view.PreviewView;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 
-import com.permissionx.guolindev.PermissionX;
-import com.permissionx.guolindev.callback.ExplainReasonCallbackWithBeforeParam;
-import com.permissionx.guolindev.callback.RequestCallback;
-import com.permissionx.guolindev.request.ExplainScope;
 import com.zhq.mycameraxlib.databinding.ActivityCameraPreviewBinding;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

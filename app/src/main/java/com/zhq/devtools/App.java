@@ -7,6 +7,7 @@ import android.os.Environment;
 
 import androidx.lifecycle.ProcessLifecycleOwner;
 
+import com.amap.api.maps.MapsInitializer;
 import com.zhq.devtools.database.MySQLiteOpenHelper;
 import com.zhq.devtools.ui.jetpack.mvvm.api.ApiService;
 import com.zhq.devtools.ui.jetpack.mvvm.api.RetrofitClient;
@@ -18,6 +19,8 @@ import com.zhuiq.fileslib.cache.MyMp3FileNameGenerator;
 import com.zhuiq.fileslib.cache.MyMp4FileNameGenerator;
 
 import org.litepal.LitePal;
+
+import java.io.File;
 
 /**
  * @Author ZhangHuiQiang
@@ -45,20 +48,25 @@ public class App extends Application {
         appDatabase = AppDatabase.getInstance(this);
         apiService = RetrofitClient.getInstance().getApiService();
 
-        CacheConfigOption option = new CacheConfigOption();
-        option.soundCacheMaxCount = 100;
-        option.soundCacheMaxSize = 2L * 1024 * 1024 * 1024;
-        option.soundNameGenerator = new MyMp3FileNameGenerator();
-        option.soundCachePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).getPath();
-        option.videoCacheMaxCount = 50;
-        option.videoCacheMaxSize = 2L * 1024 * 1024 * 1024;
-        option.videoNameGenerator = new MyMp4FileNameGenerator();
-        option.videoCachePath = this.getExternalFilesDir(Environment.DIRECTORY_MOVIES).getPath();
-        option.filesCacheMaxCount = 50;
-        option.filesCacheMaxSize = 1024 * 1024 * 1024;
-        option.filesNameGenerator = new MyFilesNameGenerator();
-        option.filesCachePath = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).getPath();
-        FilesSaveManager.getInstance().initConfig(this, option);
+//        CacheConfigOption option = new CacheConfigOption();
+//        option.soundCacheMaxCount = 100;
+//        option.soundCacheMaxSize = 2L * 1024 * 1024 * 1024;
+//        option.soundNameGenerator = new MyMp3FileNameGenerator();
+//        option.soundCachePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).getPath();
+//        option.videoCacheMaxCount = 50;
+//        option.videoCacheMaxSize = 2L * 1024 * 1024 * 1024;
+//        option.videoNameGenerator = new MyMp4FileNameGenerator();
+//        option.videoCachePath = this.getExternalFilesDir(Environment.DIRECTORY_MOVIES).getPath();
+//        option.filesCacheMaxCount = 50;
+//        option.filesCacheMaxSize = 1024 * 1024 * 1024;
+//        option.filesNameGenerator = new MyFilesNameGenerator();
+//        option.filesCachePath = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).getPath();
+//        FilesSaveManager.getInstance().initConfig(this, option);
+
+        MapsInitializer.updatePrivacyShow(this,true,true);
+        MapsInitializer.updatePrivacyAgree(this,true);
+        // 设置应用单独的地图存储目录
+        MapsInitializer.sdcardDir = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)+ File.separator+"gaode_map";
     }
 
     public static AppDatabase getAppDatabase() {

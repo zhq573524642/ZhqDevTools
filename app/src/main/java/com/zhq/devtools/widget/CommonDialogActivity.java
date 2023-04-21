@@ -8,11 +8,11 @@ import android.os.Bundle;
 import com.zhq.devtools.App;
 import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityCommonDialogBinding;
-import com.zhq.toolslib.ToastUtils;
-import com.zhq.toolslib.widget.BottomHandleDialog;
-import com.zhq.toolslib.widget.BottomInputDialog;
-import com.zhq.toolslib.widget.ButtonItemBean;
-import com.zhq.toolslib.widget.CenterButtonRemindDialog;
+import com.zhq.toolslib.toast.ToastUtils;
+import com.zhq.toolslib.window.BottomHandleDialog;
+import com.zhq.toolslib.window.BottomInputDialog;
+import com.zhq.toolslib.window.ButtonItemBean;
+import com.zhq.toolslib.window.CenterButtonRemindDialog;
 
 import java.util.ArrayList;
 import java.util.List;

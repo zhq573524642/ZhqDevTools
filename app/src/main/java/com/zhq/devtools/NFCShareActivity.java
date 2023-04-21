@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.zhq.devtools.databinding.ActivityNfcshareBinding;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 public class NFCShareActivity extends AppCompatActivity {
 
@@ -29,10 +29,6 @@ public class NFCShareActivity extends AppCompatActivity {
         PackageManager packageManager = getPackageManager();
         if (!packageManager.hasSystemFeature(PackageManager.FEATURE_NFC)){
             ToastUtils.getInstance().showShortToast(this,"不支持NFC功能");
-            return;
-        }else if (Build.VERSION.SDK_INT <
-                Build.VERSION_CODES.JELLY_BEAN_MR1){
-            ToastUtils.getInstance().showShortToast(this,"最低版本支持api-17");
             return;
         }else {
             nfcAdapter = NfcAdapter.getDefaultAdapter(this);

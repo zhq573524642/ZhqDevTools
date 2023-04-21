@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhq.devtools.databinding.FragmentMainBinding;
-import com.zhq.toolslib.NotificationUtils;
+import com.zhq.toolslib.notification.NotificationUtils;
 
 
 public class MainFragment extends Fragment {

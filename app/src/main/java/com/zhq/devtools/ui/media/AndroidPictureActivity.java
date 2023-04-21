@@ -2,7 +2,6 @@ package com.zhq.devtools.ui.media;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
@@ -18,22 +17,16 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageView;
 
 import com.permissionx.guolindev.PermissionX;
 import com.permissionx.guolindev.callback.RequestCallback;
-import com.zhq.devtools.R;
 import com.zhq.devtools.ScreenshotActivity;
 import com.zhq.devtools.ScreenshotFileObserverActivity;
 import com.zhq.devtools.TestCameraXActivity;
 import com.zhq.devtools.databinding.ActivityAndroidPictureBinding;
-import com.zhq.toolslib.ThreadUtil;
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.thread.ThreadUtil;
+import com.zhq.toolslib.toast.ToastUtils;
 
 import java.io.File;
 import java.io.IOException;

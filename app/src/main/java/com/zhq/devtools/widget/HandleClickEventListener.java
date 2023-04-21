@@ -3,7 +3,7 @@ package com.zhq.devtools.widget;
 import android.content.Context;
 import android.view.View;
 
-import com.zhq.toolslib.ToastUtils;
+import com.zhq.toolslib.toast.ToastUtils;
 
 /**
  * @Author ZhangHuiQiang

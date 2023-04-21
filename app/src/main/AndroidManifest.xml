@@ -7,6 +7,16 @@ package="com.zhq.devtools">
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 <uses-permission android:name="MediaStore.Images.Media.INTERNAL_CONTENT_URI" />
 <uses-permission android:name="MediaStore.Images.Media.EXTERNAL_CONTENT_URI" />
 <uses-permission
@@ -29,6 +39,13 @@ package="com.zhq.devtools">
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+    <meta-data
+        android:name="com.amap.api.v2.apikey"
+        android:value="fd40a965642cc67f998c9517ce25f504" />
+
+    <service android:name="com.amap.api.location.APSService"></service>
+
     <activity
         android:name=".ui.jetpack.JetpackActivity"
         android:exported="false" />
@@ -73,7 +90,7 @@ package="com.zhq.devtools">
         android:name=".ui.basic.AndroidBasicActivity"
         android:exported="false" />
     <activity
-        android:name=".AndroidViewActivity"
+        android:name=".widget.AndroidViewActivity"
         android:exported="false" />
     <activity
         android:name=".TestDatabaseActivity"
@@ -112,6 +129,39 @@ package="com.zhq.devtools">
     <activity android:name=".ui.jetpack.paging.PagingOneActivity" />
     <activity android:name=".ui.jetpack.mvvm.UserInfoActivity" />
     <activity android:name=".ui.basic.DataPersistenceActivity" />
+    <activity
+        android:name="gaode.GaodeMapActivity"
+        android:exported="true"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.amap.api.maps.offlinemap.OfflineMapActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="gaode.MapDrawActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="gaode.MapInfoActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.NineImageGridActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.Tags3DActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.simple.AndroidSwitcherActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.progress.AndroidProgressActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.viewpager.AndroidViewPagerActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.viewpager.AndroidViewPager2Activity"
+        android:screenOrientation="portrait" />
+    <activity android:name=".widget.touch.TouchTestActivity" />
 
 
     <provider

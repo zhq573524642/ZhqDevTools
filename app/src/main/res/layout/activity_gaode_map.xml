@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="gaode.GaodeMapActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_showIndoorMap"
+            style="@style/checkBoxStyle"
+            android:text="显示室内地图" />
+
+        <CheckBox
+            android:id="@+id/cb_showBuildings"
+            style="@style/checkBoxStyle"
+            android:text="显示建筑" />
+
+        <CheckBox
+            android:id="@+id/cb_TrafficEnabled"
+            style="@style/checkBoxStyle"
+            android:text="路况图层" />
+
+        <CheckBox
+            android:id="@+id/cb_language"
+            style="@style/checkBoxStyle"
+            android:text="英文显示" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbZoomControlsEnabled"
+            style="@style/checkBoxStyle"
+            android:text="缩放按钮" />
+
+        <CheckBox
+            android:id="@+id/cbCompassEnabled"
+            style="@style/checkBoxStyle"
+            android:text="指南针" />
+
+        <CheckBox
+            android:id="@+id/cbMyLocationButtonEnabled"
+            style="@style/checkBoxStyle"
+            android:text="定位按钮" />
+
+        <CheckBox
+            android:id="@+id/cbScaleControlsEnabled"
+            style="@style/checkBoxStyle"
+            android:text="比例尺" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cbGestureMapCenter"
+        style="@style/checkBoxStyle"
+        android:text="开启以地图中心的手势操作" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cbAllGesture"
+            style="@style/checkBoxStyle"
+            android:layout_marginStart="0dp"
+            android:text="所有手势" />
+
+        <CheckBox
+            android:id="@+id/cbScaleGesture"
+            style="@style/checkBoxStyle"
+            android:layout_marginStart="0dp"
+            android:text="缩放手势" />
+
+        <CheckBox
+            android:id="@+id/cbScrollGesture"
+            style="@style/checkBoxStyle"
+            android:layout_marginStart="0dp"
+            android:text="滑动手势" />
+
+        <CheckBox
+            android:id="@+id/cbRotateGesture"
+            style="@style/checkBoxStyle"
+            android:layout_marginStart="0dp"
+            android:text="旋转手势" />
+
+        <CheckBox
+            android:id="@+id/cbTiltGesture"
+            style="@style/checkBoxStyle"
+            android:layout_marginStart="0dp"
+            android:text="倾斜手势" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定位" />
+
+        <Button
+            android:id="@+id/btnMapModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+        <Button
+            android:id="@+id/btnOfflineMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="离线地图" />
+
+        <Button
+            android:id="@+id/btnMapScreenShot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnChangeMapCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="改变地图中心点" />
+
+        <Button
+            android:id="@+id/btnScaleMapUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="缩放加" />
+
+        <Button
+            android:id="@+id/btnScaleMapDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="缩放减" />
+    </LinearLayout>
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
