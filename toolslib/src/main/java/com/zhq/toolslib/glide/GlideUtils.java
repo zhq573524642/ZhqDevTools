@@ -24,6 +24,7 @@ import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.zhq.toolslib.density.DensityUtil;
@@ -314,6 +315,35 @@ public class GlideUtils {
                     }
                 });
         return this;
+    }
+
+    public void loadBlurImage(Context context,String  imageUrl, ImageView imageView) {
+        RequestOptions options = new RequestOptions()
+                .fitCenter()
+                .bitmapTransform(new BlurTransformation(10, 35));
+        Glide.with(context)
+                .load(imageUrl)
+                .apply(options)
+                .into(new ViewTarget<ImageView, Drawable>(imageView) {
+                    @Override
+                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable>
+                            transition) {
+                        Drawable drawable = resource.getCurrent();
+                        drawable.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+                        imageView.setImageDrawable(drawable);
+                    }
+                });
+    }
+
+    public  void loadImageUrlWithListener(Context context, String url, ImageView imageView, SimpleTarget<Bitmap> simpleTarget) {
+        if (context == null) return;
+        RequestOptions options = new RequestOptions();
+        Glide.with(context.getApplicationContext())
+                .asBitmap()
+                .load(url)
+                .apply(options)
+                .override(200,200)
+                .into(simpleTarget);
     }
 
 

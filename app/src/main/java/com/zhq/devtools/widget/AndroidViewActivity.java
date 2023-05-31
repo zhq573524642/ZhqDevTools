@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.zhq.devtools.databinding.ActivityAndroidViewBinding;
+import com.zhq.devtools.widget.flipview.view.FlipViewActivity;
 import com.zhq.devtools.widget.progress.AndroidProgressActivity;
 import com.zhq.devtools.widget.simple.AndroidSwitcherActivity;
 import com.zhq.devtools.widget.touch.TouchTestActivity;
@@ -50,6 +51,14 @@ public class AndroidViewActivity extends AppCompatActivity {
         binding.btnTouchTest.setOnClickListener(v -> {
             startActivity(new Intent(this, TouchTestActivity.class));
         });
-
+        binding.btnMaterialDesign.setOnClickListener(v -> {
+            startActivity(new Intent(this, MaterialDesignActivity.class));
+        });
+        binding.btnAndroidPicker.setOnClickListener(v -> {
+            startActivity(new Intent(this, AndroidPickerActivity.class));
+        });
+        binding.btnCustomFlipView.setOnClickListener(v -> {
+            startActivity(new Intent(this, FlipViewActivity.class));
+        });
     }
 }

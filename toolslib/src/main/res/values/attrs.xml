@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FixedHeightListView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DropdownMenu">
+        <attr name="titleText" format="string" />
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="selectTitleColor" format="color" />
+        <attr name="titleBgColor" format="color" />
+        <attr name="iconExpanded" format="reference" />
+        <attr name="iconCollapse" format="reference" />
+        <attr name="iconColor" format="color" />
+        <attr name="listBgColor" format="color" />
+        <attr name="titleHighLight" format="color" />
+        <attr name="showPaddingLeft" format="dimension" />
+        <attr name="showPaddingRight" format="dimension" />
+        <attr name="listItemSelectedBg" format="reference" />
+        <attr name="listItemUnSelectedBg" format="reference" />
+        <attr name="listItemTextSelectedColor" format="color" />
+        <attr name="listItemTextUnSelectedColor" format="color" />
+    </declare-styleable>
+</resources>

@@ -15,9 +15,9 @@ import com.permissionx.guolindev.callback.RequestCallback;
 import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityJatpackBinding;
 import com.zhq.devtools.ui.jetpack.databinding.RecyclerBindingAdapter;
+import com.zhq.devtools.ui.jetpack.databinding.TestDatabindingActivity;
 import com.zhq.devtools.ui.jetpack.databinding.UserInfoBean;
 import com.zhq.devtools.ui.jetpack.databinding.TwoWayBindingViewModel2;
-import com.zhq.devtools.ui.jetpack.mvvm.UserInfoActivity;
 import com.zhq.devtools.ui.jetpack.navigation.NavigationActivity;
 
 import java.util.ArrayList;
@@ -53,6 +53,9 @@ public class JetpackActivity extends AppCompatActivity {
                         });
 
             }
+        });
+        binding.btnDataBinding.setOnClickListener(v -> {
+            startActivity(new Intent(this, TestDatabindingActivity.class));
         });
         binding.setHandleClickEvent(new HandleClickEventListener());
         binding.setContext(JetpackActivity.this);

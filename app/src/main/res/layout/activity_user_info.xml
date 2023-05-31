@@ -6,7 +6,7 @@
   <data>
    <variable
        name="user"
-       type="com.zhq.devtools.ui.jetpack.mvvm.model.User" />
+       type="com.zhq.devtools.ui.jetpack.entity.User" />
   </data>
   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
       android:id="@+id/swipe_refresh_layout"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false"
-        tools:context=".ui.jetpack.mvvm.UserInfoActivity">
+        tools:context=".ui.jetpack.UserInfoActivity">
 
       <LinearLayout
           android:layout_marginTop="100dp"

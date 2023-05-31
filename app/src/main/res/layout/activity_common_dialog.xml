@@ -33,5 +33,21 @@
           android:textAllCaps="false"
           android:layout_width="match_parent"
           android:layout_height="wrap_content" />
+      <com.zhq.toolslib.window.menu.DropdownMenu
+          android:id="@+id/dropdown_menu"
+          app:titleText="菜单标题"
+          app:titleTextSize="16sp"
+          app:titleColor="@color/purple_200"
+          app:titleBgColor="#f8f8f8"
+          app:listBgColor="#f1f1f1"
+          android:layout_gravity="center_horizontal"
+          android:layout_width="130dp"
+          android:layout_height="35dp"/>
+      <Button
+          android:id="@+id/btn_bottom_sheet"
+          android:layout_width="match_parent"
+          android:textAllCaps="false"
+          android:text="BottomSheet"
+          android:layout_height="wrap_content"/>
    </LinearLayout>
 </layout>

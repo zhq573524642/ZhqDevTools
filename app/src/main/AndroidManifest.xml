@@ -37,8 +37,7 @@ package="com.zhq.devtools">
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
     android:supportsRtl="true"
-    android:theme="@style/AppTheme"
-    tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+    android:theme="@style/AppTheme">
 
     <meta-data
         android:name="com.amap.api.v2.apikey"
@@ -127,7 +126,7 @@ package="com.zhq.devtools">
         <nav-graph android:value="@navigation/nav_graph" />
     </activity>
     <activity android:name=".ui.jetpack.paging.PagingOneActivity" />
-    <activity android:name=".ui.jetpack.mvvm.UserInfoActivity" />
+    <activity android:name=".ui.jetpack.UserInfoActivity" />
     <activity android:name=".ui.basic.DataPersistenceActivity" />
     <activity
         android:name="gaode.GaodeMapActivity"
@@ -162,6 +161,23 @@ package="com.zhq.devtools">
         android:name=".widget.viewpager.AndroidViewPager2Activity"
         android:screenOrientation="portrait" />
     <activity android:name=".widget.touch.TouchTestActivity" />
+    <activity
+        android:name=".ui.jetpack.databinding.TestDatabindingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.MaterialDesignActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.PaletteTestActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".widget.material.CoordinatorLayoutActivity"
+        android:screenOrientation="portrait" />
+    <activity android:name=".widget.BottomSheetActivity" />
+    <activity android:name=".widget.AndroidPickerActivity" />
+    <activity
+        android:name=".widget.flipview.view.FlipViewActivity"
+        android:screenOrientation="portrait" />
 
 
     <provider

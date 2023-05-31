@@ -38,9 +38,9 @@
 
         <Button
             android:id="@+id/btn_mvvm"
-            android:text="MVVM架构演示"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="MVVM架构演示" />
 
         <Button
             android:id="@+id/btn_navigation"
@@ -48,6 +48,13 @@
             android:layout_height="wrap_content"
             android:onClick="@{handleClickEvent::setClickEvent}"
             android:text="Navigation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_dataBinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DataBinding"
             android:textAllCaps="false" />
 
         <ImageView

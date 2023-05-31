@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 
 import com.zhq.devtools.databinding.FragmentTwoBinding;
-import com.zhq.devtools.ui.jetpack.view_model.TestViewModel;
+import com.zhq.devtools.ui.jetpack.viewmodel.TestViewModel;
 
 
 public class TwoFragment extends Fragment {

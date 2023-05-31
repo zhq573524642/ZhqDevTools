@@ -1,23 +1,29 @@
 package com.zhq.devtools.ui.media;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.zhq.devtools.R;
 import com.zhq.devtools.databinding.ActivityGlidePictureLoadBinding;
 import com.zhq.toolslib.glide.GlideUtils;
+import com.zhq.toolslib.thread.ObserverUtil;
 import com.zhq.toolslib.toast.ToastUtils;
 
 public class GlidePictureLoadActivity extends AppCompatActivity {
 
     private com.zhq.devtools.databinding.ActivityGlidePictureLoadBinding binding;
     private String testImage = "https://img1.baidu.com/it/u=413643897,2296924942&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
-
+    private static final String TAG = "GlidePictureLoadActivit";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +128,31 @@ public class GlidePictureLoadActivity extends AppCompatActivity {
             GlideUtils.getInstance()
                     .init(getApplicationContext())
                     .loadBlurBitmap(R.drawable.ic_test_img, binding.imageView);
+        });
+
+        binding.btnLoadOriginalImage.setOnClickListener(v -> {
+           new  ObserverUtil<Bitmap>().setObserverTask(new ObserverUtil.OnObserverHandleListener<Bitmap>() {
+               @Override
+               public Bitmap onHandleFunction() {
+                   return GlideUtils.getInstance().getBitmapByUrl(getApplicationContext(), testImage);
+               }
+
+               @Override
+               public void onNext(Bitmap value) {
+                   Log.d(TAG, "===bitmap大小: "+value.getByteCount());
+                   binding.imageViewLoad.setImageBitmap(value);
+               }
+           });
+        });
+        binding.btnLoadSizeImage.setOnClickListener(v -> {
+                 GlideUtils.getInstance().loadImageUrlWithListener(getApplicationContext(),
+                         testImage, binding.imageViewLoad, new SimpleTarget<Bitmap>() {
+                             @Override
+                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                                 Log.d(TAG, "===onResourceReady: "+resource.getByteCount());
+                                 binding.imageViewLoad.setImageBitmap(resource);
+                             }
+                         });
         });
     }
 

@@ -55,7 +55,8 @@ dependencies {
     api 'com.moxun:tagcloudlib:1.2.0'
     //圆形头像
     api 'de.hdodenhof:circleimageview:2.2.0'
-
+    //Picker
+    api 'com.contrarywind:Android-PickerView:4.1.9'
 
 
 }

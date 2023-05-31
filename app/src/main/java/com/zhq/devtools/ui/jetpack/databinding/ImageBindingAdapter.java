@@ -29,6 +29,7 @@ public class ImageBindingAdapter {
         }
     }
 
+
     @BindingAdapter("padding")
     public static void setImageViewPadding(ImageView imageView,int oldPadding,int newPadding){
         if (newPadding!=oldPadding){

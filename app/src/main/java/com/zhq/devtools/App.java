@@ -9,14 +9,10 @@ import androidx.lifecycle.ProcessLifecycleOwner;
 
 import com.amap.api.maps.MapsInitializer;
 import com.zhq.devtools.database.MySQLiteOpenHelper;
-import com.zhq.devtools.ui.jetpack.mvvm.api.ApiService;
-import com.zhq.devtools.ui.jetpack.mvvm.api.RetrofitClient;
-import com.zhq.devtools.ui.jetpack.mvvm.db.AppDatabase;
-import com.zhuiq.fileslib.FilesSaveManager;
-import com.zhuiq.fileslib.cache.CacheConfigOption;
-import com.zhuiq.fileslib.cache.MyFilesNameGenerator;
-import com.zhuiq.fileslib.cache.MyMp3FileNameGenerator;
-import com.zhuiq.fileslib.cache.MyMp4FileNameGenerator;
+import com.zhq.devtools.ui.jetpack.api.ApiService;
+import com.zhq.devtools.ui.jetpack.api.RetrofitClient;
+import com.zhq.devtools.ui.jetpack.databinding.ToastUtils;
+import com.zhq.devtools.ui.jetpack.db.AppDatabase;
 
 import org.litepal.LitePal;
 
@@ -40,6 +36,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         applicationContext = this.getApplicationContext();
+        ToastUtils.INSTANCE.init(this);
         ProcessLifecycleOwner.get().getLifecycle().addObserver(new ApplicationLifecycleObserver());
         LitePal.initialize(this);
         MySQLiteOpenHelper mySQLiteOpenHelper = new MySQLiteOpenHelper(this, "mypersondata1.db", null, 3);

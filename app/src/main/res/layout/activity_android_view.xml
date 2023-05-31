@@ -3,53 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".widget.AndroidViewActivity">
-   <Button
-       android:id="@+id/btnSwitcher"
-       android:text="Android中现成的控件"
-       android:textAllCaps="false"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btnProgress"
-       android:text="进度条"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btn_view_pager"
-       android:textAllCaps="false"
-       android:text="ViewPager"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btn_view_pager2"
-       android:textAllCaps="false"
-       android:text="ViewPager2"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btn_dialog"
-       android:text="常用Dialog"
-       android:textAllCaps="false"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btnNineGridView"
-       android:text="仿微信朋友圈图片九宫格"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btnTags3D"
-       android:text="仿Soul 3D星球"
-       android:textAllCaps="false"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-   <Button
-       android:id="@+id/btnTouchTest"
-       android:text="触摸事件Test"
-       android:textAllCaps="false"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android中现成的控件"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="进度条" />
+
+    <Button
+        android:id="@+id/btn_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewPager"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_view_pager2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewPager2"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="常用Dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnNineGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="仿微信朋友圈图片九宫格" />
+
+    <Button
+        android:id="@+id/btnTags3D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="仿Soul 3D星球"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btnCustomFlipView"
+        android:text="自定义翻页FlipView"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnTouchTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="触摸事件Test"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnMaterialDesign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MaterialDesign"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btnAndroidPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AndroidPicker"
+        android:textAllCaps="false" />
 </LinearLayout>

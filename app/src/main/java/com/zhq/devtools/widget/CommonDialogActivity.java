@@ -3,7 +3,9 @@ package com.zhq.devtools.widget;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.zhq.devtools.App;
 import com.zhq.devtools.R;
@@ -13,6 +15,7 @@ import com.zhq.toolslib.window.BottomHandleDialog;
 import com.zhq.toolslib.window.BottomInputDialog;
 import com.zhq.toolslib.window.ButtonItemBean;
 import com.zhq.toolslib.window.CenterButtonRemindDialog;
+import com.zhq.toolslib.window.menu.OnDropdownItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +23,12 @@ import java.util.List;
 public class CommonDialogActivity extends AppCompatActivity {
 
     private com.zhq.devtools.databinding.ActivityCommonDialogBinding binding;
+    private List<String> dropMenuItemList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=(ActivityCommonDialogBinding) DataBindingUtil.setContentView(this,R.layout.activity_common_dialog);
+        binding = (ActivityCommonDialogBinding) DataBindingUtil.setContentView(this, R.layout.activity_common_dialog);
         initView();
     }
 
@@ -39,6 +43,23 @@ public class CommonDialogActivity extends AppCompatActivity {
         binding.btnCenterSimpleRemindDialog.setOnClickListener(v -> {
             showCenterSimpleRemindDialog();
         });
+        dropMenuItemList.add("哈哈哈哈");
+        dropMenuItemList.add("啦啦啦啦");
+        dropMenuItemList.add("嘎嘎嘎嘎");
+        dropMenuItemList.add("嘿嘿嘿嘿");
+        dropMenuItemList.add("啊啊啊啊");
+        binding.dropdownMenu.setData(dropMenuItemList);
+        binding.dropdownMenu.setOnItemClickListener(new OnDropdownItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                ToastUtils.getInstance().showShortToast(App.getAppContext(),dropMenuItemList.get(position));
+            }
+        });
+
+        binding.btnBottomSheet.setOnClickListener(v -> {
+            startActivity(new Intent(this,BottomSheetActivity.class));
+        });
+
     }
 
     private CenterButtonRemindDialog centerButtonRemindDialog;
@@ -180,4 +201,5 @@ public class CommonDialogActivity extends AppCompatActivity {
             bottomHandleDialog.show();
         }
     }
+
 }

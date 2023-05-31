@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.zhq.devtools.ui.jetpack.databinding.UserInfo" />
+
+        <import
+            alias="subUserInfo"
+            type="com.zhq.devtools.ui.jetpack.databinding.bean.UserInfo" />
+
+        <import type="android.view.View" />
+
+        <import type="com.zhq.devtools.ui.jetpack.databinding.UserHandleEvent" />
+
+
+        <variable
+            name="userInfo"
+            type="UserInfo" />
+
+        <variable
+            name="subInfo"
+            type="subUserInfo" />
+
+        <variable
+            name="isShow"
+            type="Boolean" />
+
+        <variable
+            name="userHandle"
+            type="UserHandleEvent" />
+        
+        <variable
+            name="imageUrl"
+            type="String" />
+        <variable
+            name="placeholder"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.jetpack.databinding.TestDatabindingActivity">
+        <!--直接显示文本-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userInfo.name}" />
+        <!--文本中拼接文本-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/user_info(userInfo.name,userInfo.age)}" />
+        <!--显示隐藏-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{isShow?@string/text_show:@string/text_gone}"
+            android:visibility="@{isShow?View.VISIBLE:View.GONE}" />
+        <!--无参数-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->userHandle.userOnClick2(userInfo)}"
+            android:text="button1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{userHandle::afterTextChanged}" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{userHandle::afterUserTextChanged}" />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+    </LinearLayout>
+</layout>

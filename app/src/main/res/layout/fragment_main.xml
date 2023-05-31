@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+    <data>
 
-    <Button
-        android:id="@+id/btn_start_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="跳转Login" />
+    </data>
 
-    <Button
-        android:id="@+id/btn_send_pending_intent_notification"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="发送通知（PendingIntent）"
-        android:textAllCaps="false" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.jetpack.navigation.MainFragment">
 
-    <fragment
-        android:id="@+id/fragment_one"
-        android:name="com.zhq.devtools.ui.fragment.OneFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#262626" />
+        <Button
+            android:id="@+id/btn_start_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转Login" />
 
-    <fragment
-        android:id="@+id/fragment_two"
-        android:name="com.zhq.devtools.ui.fragment.TwoFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_send_pending_intent_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送通知（PendingIntent）"
+            android:textAllCaps="false" />
+
+        <fragment
+            android:id="@+id/fragment_one"
+            android:name="com.zhq.devtools.ui.fragment.OneFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#262626" />
+
+        <fragment
+            android:id="@+id/fragment_two"
+            android:name="com.zhq.devtools.ui.fragment.TwoFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>
