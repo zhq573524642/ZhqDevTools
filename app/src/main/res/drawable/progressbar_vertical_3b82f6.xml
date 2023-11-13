@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="#DBEAFE" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+
+        <scale
+            android:scaleHeight="100%"
+            android:scaleGravity="bottom">
+            <shape>
+                <solid android:color="#3B82F6" />
+                <corners android:radius="10dp" />
+            </shape>
+        </scale>
+        <!--scale和clip只能二选一，一种是缩放一种是切割方式，进度条末端形状不同-->
+        <!-- <clip
+             android:gravity="bottom"
+             android:clipOrientation="vertical"
+             >
+             <shape >
+                 <corners android:radius="50dip" />
+                 <gradient
+                     android:angle="270"
+                     android:centerY="0.75"
+                     android:endColor="#165CBC"
+                     android:startColor="#85B0E9" />
+             </shape>
+         </clip>-->
+
+    </item>
+</layer-list>

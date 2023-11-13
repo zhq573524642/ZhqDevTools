@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.zhq.devtools.databinding.ActivityAndroidViewBinding;
+import com.zhq.devtools.widget.anim.AnimActivity;
 import com.zhq.devtools.widget.flipview.view.FlipViewActivity;
 import com.zhq.devtools.widget.progress.AndroidProgressActivity;
 import com.zhq.devtools.widget.simple.AndroidSwitcherActivity;
@@ -29,6 +30,9 @@ public class AndroidViewActivity extends AppCompatActivity {
     private void initView() {
         binding.btnSwitcher.setOnClickListener(v -> {
             startActivity(new Intent(this, AndroidSwitcherActivity.class));
+        });
+        binding.btnAnimation.setOnClickListener(v -> {
+            startActivity(new Intent(this, AnimActivity.class));
         });
         binding.btnViewPager.setOnClickListener(v -> {
             startActivity(new Intent(this, AndroidViewPagerActivity.class));

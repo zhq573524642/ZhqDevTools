@@ -80,15 +80,24 @@ public class AndroidProgressActivity extends AppCompatActivity {
             binding.pbCustom.setProgress(progressIndex, true);
             binding.sbNormal.setProgress(progressIndex, true);
             binding.sbDiscrete.setProgress(progressIndex, true);
+            binding.colorArcProgressBar.setCurrentValues(progressIndex,1000);
         } else {
             binding.pbNormal.setProgress(progressIndex);
             binding.pbCustom.setProgress(progressIndex);
             binding.sbNormal.setProgress(progressIndex);
             binding.sbDiscrete.setProgress(progressIndex);
+            binding.colorArcProgressBar.setCurrentValues(progressIndex,1000);
         }
         binding.pbNormal.setSecondaryProgress(secondaryProgressIndex);
         binding.pbCustom.setSecondaryProgress(secondaryProgressIndex);
         binding.sbNormal.setSecondaryProgress(secondaryProgressIndex);
         binding.sbDiscrete.setSecondaryProgress(secondaryProgressIndex);
+
+        //垂直进度条
+        binding.verticalProgressBar.setProgressMax(100);
+        binding.verticalProgressBar.setProgress(progressIndex);
+        binding.verticalProgressBar.setShowTopProgressText(true);
+        binding.verticalProgressBar.setProgressTextSize(14);
+        binding.verticalProgressBar.setProgressTextColor(R.color.purple_200);
     }
 }

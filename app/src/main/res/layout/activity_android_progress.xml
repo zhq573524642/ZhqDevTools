@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ScrollView
@@ -138,6 +139,34 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp" />
+
+
+
+            <com.zhq.devtools.widget.progress.ColorArcProgressBar
+                android:id="@+id/color_arc_progress_bar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                app:back_color="#48C28B"
+                app:back_width="10dp"
+                app:front_color1="#48C28B"
+                app:front_width="10dp"
+                app:hint_color="#48C28B"
+                app:is_need_content="true"
+                app:is_need_title="true"
+                app:is_need_unit="true"
+                app:max_value="100"
+                app:string_title="正在下载"
+                app:string_unit="百分比%"
+                app:total_engle="360" />
+
+            <com.zhq.devtools.widget.progress.VerticalProgressBar
+                android:id="@+id/vertical_progress_bar"
+                android:layout_width="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_height="200dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"

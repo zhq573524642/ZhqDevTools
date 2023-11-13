@@ -178,6 +178,8 @@ package="com.zhq.devtools">
     <activity
         android:name=".widget.flipview.view.FlipViewActivity"
         android:screenOrientation="portrait" />
+    <activity android:name=".widget.anim.AnimActivity"
+        android:screenOrientation="portrait"/>
 
 
     <provider

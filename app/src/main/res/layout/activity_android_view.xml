@@ -13,6 +13,11 @@
         android:layout_height="wrap_content"
         android:text="Android中现成的控件"
         android:textAllCaps="false" />
+    <Button
+        android:text="动画"
+        android:id="@+id/btn_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnProgress"

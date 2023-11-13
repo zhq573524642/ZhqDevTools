@@ -54,4 +54,8 @@
     <style name="style_rating_bar" parent="@style/Widget.AppCompat.RatingBar">
         <item name="android:progressDrawable">@drawable/bg_rating_bar</item>
     </style>
+
+    <style name="progressbar_vertical_3b82f6" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progressbar_vertical_3b82f6</item>
+    </style>
 </resources>

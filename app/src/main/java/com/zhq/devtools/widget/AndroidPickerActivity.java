@@ -73,7 +73,7 @@ public class AndroidPickerActivity extends BaseActivity<ActivityAndroidPickerBin
 
             }
         }).build();
-        optionsPickerView.setPicker(Arrays.asList(sexList));
+//        optionsPickerView.setPicker(Arrays.asList(sexList));
         optionsPickerView.show(true);
     }
 }
