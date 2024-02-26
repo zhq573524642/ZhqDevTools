@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".widget.AndroidViewActivity">
-
+    <Button
+        android:id="@+id/btnGeneralView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android中普通控件"
+        android:textAllCaps="false" />
     <Button
         android:id="@+id/btnSwitcher"
         android:layout_width="match_parent"

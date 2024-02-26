@@ -28,6 +28,9 @@ public class AndroidViewActivity extends AppCompatActivity {
 
 
     private void initView() {
+        binding.btnGeneralView.setOnClickListener(v -> {
+            startActivity(new Intent(this,GeneralViewActivity.class));
+        });
         binding.btnSwitcher.setOnClickListener(v -> {
             startActivity(new Intent(this, AndroidSwitcherActivity.class));
         });

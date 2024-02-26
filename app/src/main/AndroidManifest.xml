@@ -1,202 +1,216 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-package="com.zhq.devtools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zhq.devtools">
 
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-<uses-permission android:name="MediaStore.Images.Media.INTERNAL_CONTENT_URI" />
-<uses-permission android:name="MediaStore.Images.Media.EXTERNAL_CONTENT_URI" />
-<uses-permission
-    android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-    tools:ignore="ScopedStorage" />
-<uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="MediaStore.Images.Media.INTERNAL_CONTENT_URI" />
+    <uses-permission android:name="MediaStore.Images.Media.EXTERNAL_CONTENT_URI" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.NFC" />
 
-<uses-feature
-    android:name="android.hardware.nfc"
-    android:required="false" />
-<uses-feature
-    android:name="android.hardware.camera"
-    android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
-<application
-    android:name=".App"
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
-    <meta-data
-        android:name="com.amap.api.v2.apikey"
-        android:value="fd40a965642cc67f998c9517ce25f504" />
-
-    <service android:name="com.amap.api.location.APSService"></service>
-
-    <activity
-        android:name=".ui.jetpack.JetpackActivity"
-        android:exported="false" />
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".WebViewActivity"
-        android:exported="false" />
-    <activity
-        android:name=".ScreenshotFileObserverActivity"
-        android:exported="false" />
-    <activity
-        android:name=".ScreenshotActivity"
-        android:exported="false" />
-    <activity
-        android:name=".ui.media.AndroidMediaActivity"
-        android:exported="false" />
-    <activity
-        android:name=".NFCShareActivity"
-        android:exported="false" />
-    <activity
-        android:name=".FileSelectActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.PICK" />
-
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.OPENABLE" />
-
-            <data android:mimeType="text/plain" />
-            <data android:mimeType="image/*" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".ui.basic.AndroidBasicActivity"
-        android:exported="false" />
-    <activity
-        android:name=".widget.AndroidViewActivity"
-        android:exported="false" />
-    <activity
-        android:name=".TestDatabaseActivity"
-        android:exported="false"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".NotificationActivity"
-        android:exported="false"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".TestCameraXActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".database.SQLiteOpenHelperActivity"
-        android:screenOrientation="portrait" />
-    <activity android:name=".database.LitepalActivity" />
-    <activity
-        android:name=".ui.basic.AndroidShareActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".ui.media.AndroidPictureActivity"
-        android:screenOrientation="portrait" />
-    <activity android:name=".ui.media.AndroidVideoActivity" />
-    <activity android:name=".ui.media.AudioFocusActivity" />
-    <activity android:name=".ui.media.AndroidAudioActivity" />
-    <activity android:name=".ui.media.AndroidPrintActivity" />
-    <activity android:name=".ui.media.GlidePictureLoadActivity" />
-    <activity android:name=".widget.CommonDialogActivity" />
-    <activity
-        android:name=".ui.jetpack.navigation.NavigationActivity"
-        android:exported="true"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppThemeHaveActionBar">
-        <nav-graph android:value="@navigation/nav_graph" />
-    </activity>
-    <activity android:name=".ui.jetpack.paging.PagingOneActivity" />
-    <activity android:name=".ui.jetpack.UserInfoActivity" />
-    <activity android:name=".ui.basic.DataPersistenceActivity" />
-    <activity
-        android:name="gaode.GaodeMapActivity"
-        android:exported="true"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name="com.amap.api.maps.offlinemap.OfflineMapActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name="gaode.MapDrawActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name="gaode.MapInfoActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.NineImageGridActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.Tags3DActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.simple.AndroidSwitcherActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.progress.AndroidProgressActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.viewpager.AndroidViewPagerActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.viewpager.AndroidViewPager2Activity"
-        android:screenOrientation="portrait" />
-    <activity android:name=".widget.touch.TouchTestActivity" />
-    <activity
-        android:name=".ui.jetpack.databinding.TestDatabindingActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.MaterialDesignActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.PaletteTestActivity"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".widget.material.CoordinatorLayoutActivity"
-        android:screenOrientation="portrait" />
-    <activity android:name=".widget.BottomSheetActivity" />
-    <activity android:name=".widget.AndroidPickerActivity" />
-    <activity
-        android:name=".widget.flipview.view.FlipViewActivity"
-        android:screenOrientation="portrait" />
-    <activity android:name=".widget.anim.AnimActivity"
-        android:screenOrientation="portrait"/>
-
-
-    <provider
-        android:name="androidx.core.content.FileProvider"
-        android:authorities="com.zhq.devtools.fileprovider"
-        android:exported="false"
-        android:grantUriPermissions="true">
         <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_provider_paths" />
-    </provider> <!-- 控制音频receiver -->
-    <receiver
-        android:name=".RemoteControlReceiver"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MEDIA_BUTTON" />
-        </intent-filter>
-    </receiver>
-</application>
+            android:name="com.amap.api.v2.apikey"
+            android:value="fd40a965642cc67f998c9517ce25f504" />
+
+        <service android:name="com.amap.api.location.APSService"></service>
+        <service
+            android:name=".ui.service.TestService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.jetpack.JetpackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenshotFileObserverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenshotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.media.AndroidMediaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NFCShareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FileSelectActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.basic.AndroidBasicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".widget.AndroidViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestDatabaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestCameraXActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".database.SQLiteOpenHelperActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".database.LitepalActivity" />
+        <activity
+            android:name=".ui.basic.AndroidShareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.media.AndroidPictureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.media.AndroidVideoActivity" />
+        <activity android:name=".ui.media.AudioFocusActivity" />
+        <activity android:name=".ui.media.AndroidAudioActivity" />
+        <activity android:name=".ui.media.AndroidPrintActivity" />
+        <activity android:name=".ui.media.GlidePictureLoadActivity" />
+        <activity android:name=".widget.CommonDialogActivity" />
+        <activity
+            android:name=".ui.jetpack.navigation.NavigationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeHaveActionBar">
+            <nav-graph android:value="@navigation/nav_graph" />
+        </activity>
+        <activity android:name=".ui.jetpack.paging.PagingOneActivity" />
+        <activity android:name=".ui.jetpack.UserInfoActivity" />
+        <activity android:name=".ui.basic.DataPersistenceActivity" />
+        <activity
+            android:name="gaode.GaodeMapActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.amap.api.maps.offlinemap.OfflineMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gaode.MapDrawActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gaode.MapInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.NineImageGridActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.Tags3DActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.simple.AndroidSwitcherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.progress.AndroidProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.viewpager.AndroidViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.viewpager.AndroidViewPager2Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".widget.touch.TouchTestActivity" />
+        <activity
+            android:name=".ui.jetpack.databinding.TestDatabindingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.MaterialDesignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.PaletteTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.material.CoordinatorLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".widget.BottomSheetActivity" />
+        <activity android:name=".widget.AndroidPickerActivity" />
+        <activity
+            android:name=".widget.flipview.view.FlipViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.anim.AnimActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.GeneralViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.EditTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AndroidFourComponentActivity"
+            android:screenOrientation="portrait" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.zhq.devtools.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider> <!-- 控制音频receiver -->
+        <receiver
+            android:name=".RemoteControlReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>

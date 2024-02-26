@@ -24,6 +24,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding, MainViewMode
     @Override
     protected void initData() {
         VMProviders(MainViewModel.class);
+        initView();
     }
 
     private void initView() {
@@ -53,7 +54,10 @@ public class MainFragment extends BaseFragment<FragmentMainBinding, MainViewMode
 
     private PendingIntent getPendingIntent() {
         Bundle bundle = new Bundle();
-        bundle.putString("param", "这是通知传的参数");
+        bundle.putString("username", "张三");
+        bundle.putInt("age",28);
+        bundle.putString("sex","男");
+        bundle.putString("className","1304班");
         return Navigation.findNavController(getActivity(), R.id.nav_host_fragment_container)
                 .createDeepLink()
                 .setGraph(R.navigation.nav_graph)

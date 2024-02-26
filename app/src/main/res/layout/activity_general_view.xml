@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".widget.GeneralViewActivity">
+
+            <TextView
+                android:id="@+id/text_view1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#f5f5f5"
+                android:gravity="center"
+                android:shadowColor="#00ff00"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="3.0"
+                android:text="Hello World！"
+                android:textColor="#ff0000" />
+
+            <TextView
+                android:id="@+id/text_view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:autoLink="all" />
+
+            <TextView
+                android:id="@+id/text_view3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/text_view4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/text_view5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:id="@+id/btn_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EditText"
+                android:textAllCaps="false" />
+
+            <com.zhq.toolslib.view.RippleButtonView
+                android:id="@+id/ripple_button_view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@drawable/shape_cbt_607ff0"
+                android:text="带波纹的按钮"
+                app:rippleBgColor="#00ff00"
+                app:rippleColor="#ff0000" />
+            <Switch
+                android:id="@+id/btnSwitch"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:track="@drawable/select_switch_track"
+                android:thumb="@drawable/select_switch_thumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

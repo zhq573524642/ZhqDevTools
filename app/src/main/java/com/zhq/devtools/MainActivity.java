@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, AndroidBasicActivity.class));
                         break;
                     case 1://四大组件
+                        startActivity(new Intent(MainActivity.this,AndroidFourComponentActivity.class));
                         break;
                     case 2://数据库
                         startActivity(new Intent(MainActivity.this, TestDatabaseActivity.class));
@@ -104,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
                                 });
                         String sHA1 = sHA1(getApplicationContext());
                         Log.d(TAG, "===SHA1：: "+sHA1);
+                        break;
+                    case 7://java基础
                         break;
                 }
             }

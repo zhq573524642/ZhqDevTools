@@ -24,7 +24,7 @@ public class PendingIntentFragment extends Fragment {
         return binding.getRoot();
     }
 
-    //https://blog.csdn.net/stephen_sun_/article/details/123339025 DeepLink解析
+    //adb shell am start -a android.intent.action.VIEW -d "zhq://www.zhq.com/张慧强/30?sex=男&className=1304班"
     private void initView() {
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -32,11 +32,11 @@ public class PendingIntentFragment extends Fragment {
             int age = bundle.getInt("age");
             String sex = bundle.getString("sex");
             String className = bundle.getString("className");
-            binding.tvTitle.setText("这是点击通知通过PendingIntent跳进来，参数：" +
+            binding.tvTitle.setText("这是点击通知通过PendingIntent跳进来，\n参数：" +
                     "username:" + username
-                    + "age:" + age
-                    + "sex:" + sex
-                    + "className:" + className);
+                    + "\nage:" + age
+                    + "\nsex:" + sex
+                    + "\nclassName:" + className);
         }
     }
 }

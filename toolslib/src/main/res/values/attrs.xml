@@ -22,4 +22,9 @@
         <attr name="listItemTextSelectedColor" format="color" />
         <attr name="listItemTextUnSelectedColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="RippleButtonView">
+        <attr name="rippleColor" format="color" />
+        <attr name="rippleBgColor" format="color" />
+    </declare-styleable>
 </resources>

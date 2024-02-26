@@ -36,7 +36,7 @@
         android:name="com.zhq.devtools.PendingIntentFragment"
         android:label="fragment_pending_intent"
         tools:layout="@layout/fragment_pending_intent">
-        <deepLink app:uri="zhq://www.baidu.com/{username}/{age}?sex={sex}&amp;className={className}" />
+        <deepLink app:uri="zhq://www.zhq.com/{username}/{age}?sex={sex}&amp;className={className}" />
         <argument
             android:name="username"
             android:defaultValue="unknown"
