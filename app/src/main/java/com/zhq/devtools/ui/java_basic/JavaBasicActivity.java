@@ -2,6 +2,8 @@ package com.zhq.devtools.ui.java_basic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -32,6 +34,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class JavaBasicActivity extends BaseActivity<ActivityJavaBasicBinding> {
 
     private static final String TAG = "JavaBasicActivity";
+
+    public static void start(Context context){
+        Intent intent = new Intent(context, JavaBasicActivity.class);
+        context.startActivity(intent);
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.activity_java_basic;
@@ -42,11 +49,14 @@ public class JavaBasicActivity extends BaseActivity<ActivityJavaBasicBinding> {
         mBinding.btnMultiThread.setOnClickListener(v -> {
 
         });
+        mBinding.btnJavaReflect.setOnClickListener(v -> {
+            JavaReflectActivity.start(mContext);
+        });
 
 
     }
     private static int index=0;
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 
 //        FutureTask<Integer> stringFutureTask = new FutureTask<Integer>(new Callable<Integer>() {
 //            @Override
@@ -75,7 +85,7 @@ public class JavaBasicActivity extends BaseActivity<ActivityJavaBasicBinding> {
 //        } catch (InterruptedException e) {
 //            throw new RuntimeException(e);
 //        }
-    }
+//    }
 
     public void mySyncMethod() {
 //        PipedInputStream pipedInputStream = new PipedInputStream();

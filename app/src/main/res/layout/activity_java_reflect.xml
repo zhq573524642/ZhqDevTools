@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btn1"
+                    android:text="通过反射调用构造方法"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn2"
+                    android:text="通过反射调用含参构造方法"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn3"
+                    android:text="通过反射获取指定成员nickname（不包含私有）"
+                    android:layout_width="match_parent"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn4"
+                    android:text="通过反射获取成员（包含私有）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn5"
+                    android:text="通过反射获取全部成员（不包含私有）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn6"
+                    android:text="通过反射获取全部成员（包含私有不包含父类和超类）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <Button
+                    android:id="@+id/btn8"
+                    android:text="通过反射获取全部公共方法（包含父类）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn9"
+                    android:text="通过反射获取本类中全部公共方法（包含私有）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn10"
+                    android:text="通过反射获取指定公共方法"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn11"
+                    android:text="通过反射获取指定方法（包含私有）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tvShow"
+                    android:layout_margin="10dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="#262626"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

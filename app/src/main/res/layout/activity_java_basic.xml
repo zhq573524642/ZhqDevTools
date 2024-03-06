@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,12 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#ffffff"
         tools:context=".ui.java_basic.JavaBasicActivity">
 
         <Button
-            android:layout_width="match_parent"
             android:id="@+id/btn_multi_thread"
-            android:text="java多线程"
-            android:layout_height="wrap_content" />
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="java多线程" />
+
+        <Button
+            android:id="@+id/btn_java_reflect"
+            android:text="Java反射"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 </layout>

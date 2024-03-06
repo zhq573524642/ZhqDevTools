@@ -2,8 +2,10 @@ package com.zhq.devtools.ui.jetpack.navigation;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.navigation.NavDeepLinkRequest;
 import androidx.navigation.Navigation;
 
 import com.zhq.devtools.R;
@@ -35,6 +37,10 @@ public class MainFragment extends BaseFragment<FragmentMainBinding, MainViewMode
                     .setAge(20)
                     .build().toBundle();
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_loginFragment, bundle);
+
+            //打开DeepLink
+            NavDeepLinkRequest navDeepLinkRequest = NavDeepLinkRequest.Builder.fromUri(Uri.parse("xxxx")).build();
+            Navigation.findNavController(v).navigate(navDeepLinkRequest);
         });
 
         mBinding.btnSendPendingIntentNotification.setOnClickListener(v -> {

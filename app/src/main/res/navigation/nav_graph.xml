@@ -53,6 +53,10 @@
             android:name="className"
             android:defaultValue="unknown"
             app:argType="string" />
+        <argument
+            android:name="grade"
+            app:argType="float"
+            android:defaultValue="0" />
     </fragment>
     
 </navigation>

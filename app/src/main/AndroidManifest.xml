@@ -194,6 +194,10 @@
         <activity
             android:name=".AndroidFourComponentActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.java_basic.JavaBasicActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.java_basic.JavaReflectActivity"
+            android:screenOrientation="portrait"/>
 
 
         <provider

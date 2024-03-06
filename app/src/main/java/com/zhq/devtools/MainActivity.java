@@ -33,6 +33,7 @@ import com.permissionx.guolindev.callback.RequestCallback;
 import com.zhq.devtools.adapter.MainMenuListAdapter;
 import com.zhq.devtools.databinding.ActivityMainBinding;
 import com.zhq.devtools.ui.basic.AndroidBasicActivity;
+import com.zhq.devtools.ui.java_basic.JavaBasicActivity;
 import com.zhq.devtools.ui.jetpack.JetpackActivity;
 import com.zhq.devtools.ui.media.AndroidMediaActivity;
 import com.zhq.devtools.widget.AndroidViewActivity;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "===SHA1：: "+sHA1);
                         break;
                     case 7://java基础
+                        JavaBasicActivity.start(MainActivity.this);
                         break;
                 }
             }
